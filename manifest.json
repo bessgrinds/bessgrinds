@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+  "name": "Socbooster.app",
+  "description": "Official bot for making money on YouTube",
+  "version": "1.2.2",
+  "background": {
+    "scripts": [
+      "main/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.youtube.com/*"
+      ],
+      "run_at": "document_start",
+      "js": [
+        "main/content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "Socbooster.app"
+  },
+  "icons": {
+    "16": "popup/assets/img/off.png",
+    "48": "popup/assets/img/on.png",
+    "128": "popup/assets/img/on.png"
+  },
+  "web_accessible_resources": [
+    "popup/assets/img/overlay.png"
+  ],
+  "permissions": [
+    "http://*/*",
+    "https://*/*",
+    "tabs",
+    "alarms",
+    "storage",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "proxy",
+    "identity",
+    "identity.email"
+  ]
+}
